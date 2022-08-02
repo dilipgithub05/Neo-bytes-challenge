@@ -1,8 +1,7 @@
-FROM centos:7
+FROM ubuntu
 MAINTAINER Dilip Devops 
-RUN yum -y update && \
-    yum -y install httpd && \
-    yum clean all
+RUN apt-get update && \
+    apt-get install httpd && \
 COPY ./my_first_script.sh /
 RUN chmod +x /my_first_script.sh
 ENTRYPOINT ["/my_first_script.sh"]
